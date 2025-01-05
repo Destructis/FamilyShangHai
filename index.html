@@ -1,46 +1,81 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anquetil en Chine</title>
+    <title>Dynamic Gallery</title>
     <style>
       body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
       }
+
+      header {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+
       #tabs-container {
         display: flex;
         justify-content: center;
-        background-color: #333;
+        background-color: #f4f4f4;
         padding: 10px;
+        gap: 10px;
       }
+
       .tab-button {
-        background-color: #555;
-        color: white;
-        padding: 10px 20px;
-        margin: 0 5px;
+        padding: 10px 15px;
         border: none;
+        background-color: #ddd;
         cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
       }
+
       .tab-button.active {
-        background-color: #000;
+        background-color: #333;
+        color: white;
       }
+
+      .tab-button:hover {
+        background-color: #bbb;
+      }
+
       #gallery-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
         padding: 20px;
       }
+
+      .gallery-image {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
       h2 {
-        width: 100%;
         text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #333;
       }
     </style>
   </head>
   <body>
+    <header>
+      <h1>Galerie Dynamique</h1>
+    </header>
+
     <div id="tabs-container"></div>
     <div id="gallery-container"></div>
+
+    <script src="script.js" data-json-url="images.json" defer></script>
   </body>
 </html>

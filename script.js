@@ -1,7 +1,7 @@
 // Exemple de code JavaScript pour afficher plusieurs galeries avec des onglets
 
 // Fonction principale pour charger et afficher les galeries dynamiques
-async function loadGalleries(jsonURL = "images.json") {
+async function loadGalleries(jsonURL = "./images.json") {
   try {
     // Récupération dynamique de l'URL du fichier JSON
     const response = await fetch(jsonURL);
@@ -67,7 +67,9 @@ function displayGallery(name, images) {
     imgElement.src = `images/${name}/${image.file}`; // Le chemin doit inclure le nom du dossier
     imgElement.alt = image.caption;
     imgElement.classList.add("gallery-image"); // Ajoutez une classe pour le style si nécessaire
-    imgElement.style.width = "calc(100% / 3 - 20px)";
+
+    // Style réactif pour ajuster le nombre d'images par ligne
+    imgElement.style.width = "100%";
     imgElement.style.borderRadius = "5px";
     imgElement.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
     imgElement.style.objectFit = "cover";
@@ -83,12 +85,33 @@ function displayGallery(name, images) {
     imgContainer.appendChild(caption);
     galleryContainer.appendChild(imgContainer);
   });
+
+  // Appliquer des classes pour le responsive
+  galleryContainer.classList.add("gallery-grid");
+  applyResponsiveStyles();
+}
+
+// Fonction pour appliquer les styles réactifs dynamiquement
+function applyResponsiveStyles() {
+  const styleTag =
+    document.getElementById("responsive-styles") ||
+    document.createElement("style");
+  styleTag.id = "responsive-styles";
+  document.head.appendChild(styleTag);
+
+  styleTag.textContent = `
+      .gallery-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 20px;
+      }
+  `;
 }
 
 // Appel de la fonction après le chargement de la page
 // L'URL JSON peut être spécifiée dynamiquement en ajoutant un attribut de données dans le script HTML
 window.onload = () => {
-  const scriptTag = document.currentScript;
-  const jsonURL = scriptTag.getAttribute("data-json-url") || "images.json";
+  const scriptTag = document.querySelector('script[src="script.js"]');
+  const jsonURL = scriptTag?.getAttribute("data-json-url") || "images.json";
   loadGalleries(jsonURL);
 };

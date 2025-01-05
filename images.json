@@ -1,10 +1,28 @@
 {
-  "Nature": [
-    { "file": "forest.jpg", "caption": "Une belle forêt" },
-    { "file": "mountain.jpg", "caption": "Montagne majestueuse" }
+  "Restaurant1": [
+    { "file": "2024-12-31.18.49.19.jpg ", "caption": "Une belle forêt" },
+
+    {
+      "file": "2024-12-31.18.49.19 (2).jpg",
+      "caption": "Vue urbaine moderne"
+    }
   ],
-  "Ville": [
-    { "file": "city1.jpg", "caption": "Vue urbaine moderne" },
-    { "file": "city2.jpg", "caption": "Rue animée" }
+  "Muraille": [
+    { "file": "2024-12-31.18.49.19.jpg ", "caption": "Une belle forêt" }
+  ],
+  "Shanghai": [
+    { "file": "2024-12-31.18.49.19.jpg ", "caption": "Une belle forêt" }
+  ],
+  "Beijing": [
+    { "file": "2024-12-31.18.49.19.jpg ", "caption": "Une belle forêt" }
+  ],
+  "Restaurant2": [
+    { "file": "2024-12-31.18.49.19.jpg ", "caption": "Une belle forêt" }
+  ],
+  "Restaurant3": [
+    { "file": "2024-12-31.18.49.19.jpg ", "caption": "Une belle forêt" }
+  ],
+  "Restaurant4": [
+    { "file": "2024-12-31.18.49.19.jpg ", "caption": "Une belle forêt" }
   ]
 }
