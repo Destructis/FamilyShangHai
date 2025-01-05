@@ -1,0 +1,10 @@
+{
+  "Nature": [
+    { "file": "forest.jpg", "caption": "Une belle forêt" },
+    { "file": "mountain.jpg", "caption": "Montagne majestueuse" }
+  ],
+  "Ville": [
+    { "file": "city1.jpg", "caption": "Vue urbaine moderne" },
+    { "file": "city2.jpg", "caption": "Rue animée" }
+  ]
+}
